@@ -1,21 +1,19 @@
-version: '3.9'
+version: "3.9"
 
 services:
   db:
     image: postgres:15
-    container_name: postgres_container
     environment:
       POSTGRES_DB: organizacional_db
-      POSTGRES_USER: user123
-      POSTGRES_PASSWORD: pass123
-    ports:
-      - "5432:5432"
+      POSTGRES_USER: host
+      POSTGRES_PASSWORD: 12345678
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
   web:
     build: .
-    container_name: django_container
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
@@ -23,6 +21,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    env_file:
+      - .env.docker
 
 volumes:
   postgres_data:

@@ -1,1 +1,6 @@
-/venv
+*.pyc
+__pycache__/
+.env
+.env.docker
+venv/
+postgres_data/

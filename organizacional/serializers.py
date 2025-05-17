@@ -1,27 +1,27 @@
 from rest_framework import serializers
-from .models import Cargo, Filial, Usuario, Projeto, UsuarioProjeto
+from .models import Position, Branch, Employee, Project, EmployeeProject
 
-class CargoSerializer(serializers.ModelSerializer):
+class PositionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Cargo
+        model = Position
         fields = '__all__'
 
-class FilialSerializer(serializers.ModelSerializer):
+class BranchSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Filial
+        model = Branch
         fields = '__all__'
 
-class UsuarioSerializer(serializers.ModelSerializer):
+class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Usuario
+        model = Employee
         fields = '__all__'
 
-class ProjetoSerializer(serializers.ModelSerializer):
+class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Projeto
+        model = Project
         fields = '__all__'
 
-class UsuarioProjetoSerializer(serializers.ModelSerializer):
+class EmployeeProjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UsuarioProjeto
+        model = EmployeeProject
         fields = '__all__'

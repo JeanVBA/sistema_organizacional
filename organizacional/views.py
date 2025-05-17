@@ -1,23 +1,23 @@
 from rest_framework import viewsets
-from .models import Cargo, Filial, Usuario, Projeto, UsuarioProjeto
+from .models import Position, Branch, Employee, Project, EmployeeProject
 from .serializers import *
 
-class CargoViewSet(viewsets.ModelViewSet):
-    queryset = Cargo.objects.all()
-    serializer_class = CargoSerializer
+class PositionViewSet(viewsets.ModelViewSet):
+    queryset = Position.objects.all()
+    serializer_class = PositionSerializer
 
-class FilialViewSet(viewsets.ModelViewSet):
-    queryset = Filial.objects.all()
-    serializer_class = FilialSerializer
+class BranchViewSet(viewsets.ModelViewSet):
+    queryset = Branch.objects.all()
+    serializer_class = BranchSerializer
 
-class UsuarioViewSet(viewsets.ModelViewSet):
-    queryset = Usuario.objects.all()
-    serializer_class = UsuarioSerializer
+class EmployeeViewSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
-class ProjetoViewSet(viewsets.ModelViewSet):
-    queryset = Projeto.objects.all()
-    serializer_class = ProjetoSerializer
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
 
-class UsuarioProjetoViewSet(viewsets.ModelViewSet):
-    queryset = UsuarioProjeto.objects.all()
-    serializer_class = UsuarioProjetoSerializer
+class EmployeeProjectViewSet(viewsets.ModelViewSet):
+    queryset = EmployeeProject.objects.all()
+    serializer_class = EmployeeProjectSerializer
